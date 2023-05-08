@@ -1,0 +1,10 @@
+settings/
+cortexM*/
+ARMv8*/
+lib/
+build/
+
+*.dep
+*.ewt
+*.ewd
+Backup*.ew*
