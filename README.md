@@ -85,20 +85,20 @@ $_IAR_CMSIS_DSP_$/Lib/iar_<library-selection>_math.a
 - Mapping for `<library-section>`:
 
 | Arm Core    | ARM architecture   | Endian  | soft float   |  [SP](https://en.wikipedia.org/wiki/Single-precision_floating-point_format) float | [DP](https://en.wikipedia.org/wiki/Double-precision_floating-point_format) float | [HP](https://en.wikipedia.org/wiki/Half-precision_floating-point_format) float |
-| ----------- | ------------------ | ------- | ------------ | ---------- | ---------- | ---------- |
-| Cortex-M0   | ARMv6-M            | little  | `cortexM0l`  |
-| Cortex-M0   | ARMv6-M            | big     | `cortexM0b`  | 
-| Cortex-M3   | ARMv7-M            | little  | `cortexM3l`  |
-| Cortex-M3   | ARMv7-M            | big     | `cortexM3b`  |
-| Cortex-M4   | ARMv7E-M           | little  | `cortexM4l`  | `cortexM4lf`|
-| Cortex-M4   | ARMv7E-M           | big     | `cortexM4b`  | `cortexM4bf`|
-| Cortex-M7   | ARMv7E-M           | little  | `cortexM7l`  | `cortexM7ls`| `cortexM7lf`|
-| Cortex-M7   | ARMv7E-M           | big     | `cortexM7b`  | `cortexM7bs`| `cortexM7bf`|
-| Cortex-M23  | ARMv8-M Baseline   | little  | `ARMv8MBLl`  | 
-| Cortex-M33  | ARMv8-M Mainline   | little  | `ARMv8MMLl`  | `ARMv8MMLlfsp`| `ARMv8MMLlfdp`|
-| Cortex-M35P | ARMv8-M Mainline   | little  | `ARMv8MMLl`  | `ARMv8MMLlfsp`| `ARMv8MMLlfdp`|
-| Cortex-M55  | ARMv8.1-M Mainline | little  | `ARMv81MMLld`|  | `ARMv81MMLldfdp` | `ARMv81MLldfdph` |
-| Cortex-M85  | ARMv8.1-M Mainline | little  | `ARMv81MMLld`|  | `ARMv81MMLldfdp` | `ARMv81MLldfdph` |
+| ----------- | ------------------ | ------- | ------------- | -------------- | ---------------- | ---------------- |
+| Cortex-M0   | ARMv6-M            | little  | `cortexM0l`   |
+| Cortex-M0   | ARMv6-M            | big     | `cortexM0b`   |
+| Cortex-M3   | ARMv7-M            | little  | `cortexM3l`   |
+| Cortex-M3   | ARMv7-M            | big     | `cortexM3b`   |
+| Cortex-M4   | ARMv7E-M           | little  | `cortexM4l`   | `cortexM4lf`   |
+| Cortex-M4   | ARMv7E-M           | big     | `cortexM4b`   | `cortexM4bf`   |
+| Cortex-M7   | ARMv7E-M           | little  | `cortexM7l`   | `cortexM7ls`   | `cortexM7lf`     |
+| Cortex-M7   | ARMv7E-M           | big     | `cortexM7b`   | `cortexM7bs`   | `cortexM7bf`     |
+| Cortex-M23  | ARMv8-M Baseline   | little  | `ARMv8MBLl`   |
+| Cortex-M33  | ARMv8-M Mainline   | little  | `ARMv8MMLl`   | `ARMv8MMLlfsp` | `ARMv8MMLlfdp`   |
+| Cortex-M35P | ARMv8-M Mainline   | little  | `ARMv8MMLl`   | `ARMv8MMLlfsp` | `ARMv8MMLlfdp`   |
+| Cortex-M55  | ARMv8.1-M Mainline | little  | `ARMv81MMLld` |                | `ARMv81MMLldfdp` | `ARMv81MLldfdph` |
+| Cortex-M85  | ARMv8.1-M Mainline | little  | `ARMv81MMLld` |                | `ARMv81MMLldfdp` | `ARMv81MLldfdph` |
 
 >__Note__ The [Library/arm_cortexM_math.eww](Library) workspace can be inspected for further details on each target's configurations.
 
