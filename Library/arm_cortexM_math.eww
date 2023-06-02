@@ -92,15 +92,15 @@
             </member>
             <member>
                 <project>arm_cortexM_math</project>
-                <configuration>ARMv81MLld</configuration>
+                <configuration>ARMv81MMLld</configuration>
             </member>
             <member>
                 <project>arm_cortexM_math</project>
-                <configuration>ARMv81MLldfdp</configuration>
+                <configuration>ARMv81MMLldfdp</configuration>
             </member>
             <member>
                 <project>arm_cortexM_math</project>
-                <configuration>ARMv81MLldfdph</configuration>
+                <configuration>ARMv81MMLldfdph</configuration>
             </member>
         </batchDefinition>
     </batchBuild>
