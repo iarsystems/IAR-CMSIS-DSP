@@ -26,7 +26,7 @@ function(iar_cspy_test TARGET RESULT)
     REQUIRED)
 
   # Add a test for CTest
-  add_test(NAME ${TARGET}_test
+  add_test(NAME ${TARGET}
            COMMAND ${CSPY_BAT} --silent
              # C-SPY drivers
              ${CSPY_DRV_PROC}
@@ -37,8 +37,8 @@ function(iar_cspy_test TARGET RESULT)
              # C-SPY backend setup
              --backend
              --semihosting
+             $<IF:$<STREQUAL:$<TARGET_PROPERTY:${TARGET},CPU_$<CONFIG>>,Cortex-M55.no_se.no_mve>,--cpu=Cortex-M55.no_se,--cpu=$<TARGET_PROPERTY:${TARGET},CPU_$<CONFIG>>>
              --fpu=$<TARGET_PROPERTY:${TARGET},FPU_$<CONFIG>>
-             --cpu=$<TARGET_PROPERTY:${TARGET},CPU_$<CONFIG>>
              --endian=$<TARGET_PROPERTY:${TARGET},END_$<CONFIG>>
              $<IF:$<STREQUAL:$<TARGET_PROPERTY:${TARGET},END_$<CONFIG>>,big>,--BE8,>)
 
