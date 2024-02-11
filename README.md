@@ -5,7 +5,7 @@ Designed on top of CMSIS, CMSIS-DSP is a comprehensive suite of compute kernels 
 
 In general, the CMSIS-DSP Library is supposed to be delivered as a CMSISPack provided by silicon vendors. However, the library can also be used by non-CMSISPack projects. This repository offers a process for building the CMSIS-DSP Library from its latest sources, in IAR Embedded Workbench for Arm version 9.40.1 or later, for non-CMSISPack enabled projects.
 
->:bulb: For non-CMSISPack projects, IAR Embedded Workbench for Arm already ships with pre-built CMSIS-DSP Libraries based on version 1.8.0. For simplicity, if you do not need the library's bleeding edge features, consider [using a pre-built library](https://iar.com/CMSIS-DSP/) instead.
+>:bulb: For non-CMSISPack projects, IAR Embedded Workbench for Arm already ships with pre-built CMSIS-DSP Libraries based on version 1.8.0. For simplicity, if you do not need the library's bleeding edge features, consider [using a pre-built library](https://github.com/IARSystems/IAR-CMSIS-DSP/wiki/Using-the-CMSIS%E2%80%90DSP-Library-in-IAR-Embedded-Workbench-for-Arm) instead.
 
 ## How to build
 The library is released in source form. It is strongly advised to build the library with optimizations for high speed to get the best performances.
