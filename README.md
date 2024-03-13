@@ -5,7 +5,8 @@ Designed on top of CMSIS, CMSIS-DSP is a comprehensive suite of compute kernels 
 
 In general, the CMSIS-DSP Library is supposed to be delivered as a CMSISPack provided by silicon vendors. However, the library can also be used by non-CMSISPack projects. This repository offers a process for building the CMSIS-DSP Library from its latest sources, in IAR Embedded Workbench for Arm version 9.40.1 or later, for non-CMSISPack enabled projects.
 
->:bulb: For non-CMSISPack projects, IAR Embedded Workbench for Arm already ships with pre-built CMSIS-DSP Libraries based on version 1.8.0. For simplicity, if you do not need the library's bleeding edge features, consider [using a pre-built library](https://github.com/IARSystems/IAR-CMSIS-DSP/wiki/Using-the-CMSIS%E2%80%90DSP-Library-in-IAR-Embedded-Workbench-for-Arm) instead.
+> [!TIP]
+> For non-CMSISPack projects, IAR Embedded Workbench for Arm already ships with pre-built CMSIS-DSP Libraries based on version 1.8.0. For simplicity, if you do not need the library's bleeding edge features, consider [using a pre-built library](https://github.com/IARSystems/IAR-CMSIS-DSP/wiki/Using-the-CMSIS%E2%80%90DSP-Library-in-IAR-Embedded-Workbench-for-Arm) instead.
 
 ## How to build
 The library is released in source form. It is strongly advised to build the library with optimizations for high speed to get the best performances.
@@ -27,12 +28,14 @@ In IAR Embedded Workbench for Arm:
 
 In our example, static libraries for the supported core variants should now be available at your local repository (`%PROGRAMDATA%/IARSystems/github.com/IAR-CMSIS-DSP/Lib/*.a`).
 
->__Note__ Unless updated, these libraries only need to be built once and can be used by any project that links against them.
+> [!NOTE]
+>  Unless updated, these libraries only need to be built once and can be used by any project that links against them.
 
 ## Examples
 The CMSIS-DSP Library ships with a number of examples which demonstrate how to use the library functions. Please refer to [Examples](Examples) for an IAR Embedded Workbench Workspace (`CMSIS-DSP_Examples.eww`) with example projects. The examples documentation can be found [here](https://arm-software.github.io/CMSIS-DSP/latest/group__groupExamples.html).
 
->__Note__ These projects are configured for a generic Cortex-M4 with single-precision FPU. They are ready to run in the Simulator.
+> [!NOTE]
+> These projects are configured for a generic Cortex-M4 with single-precision FPU. They are ready to run in the Simulator.
 
 ## Using the Library
 The library functions are declared in the public file `/path/to/CMSIS-DSP/Include/arm_math.h`. Simply include this header file to your application.
@@ -58,12 +61,14 @@ Make sure your project is not using the IDE-provided CMSIS-DSP library:
 > - [ ] Use CMSIS 5.7
 >    - [ ] DSP library
 
->__Warning__ The library's API in the latest version has changed since CMSIS-DSP V1.8.0. Refer to the [online documentation](https://arm-software.github.io/CMSIS-DSP/latest) for details.
+> [!WARNING]
+>  The library's API in the latest version has changed since CMSIS-DSP V1.8.0. Refer to the [online documentation](https://arm-software.github.io/CMSIS-DSP/latest) for details.
 
 #### General Options → Target
 In your application project, verify which target is selected.
 
->__Note__ By default, new projects in IAR Embedded Workbench for Arm will assume Core:`Cortex-M3`.
+> [!NOTE]
+> By default, new projects in IAR Embedded Workbench for Arm will assume Core:`Cortex-M3`.
 
 #### C/C++ Compiler → **Preprocessor**
 Add these folders containing the library headers to your project's preprocessor options:
@@ -71,7 +76,8 @@ Add these folders containing the library headers to your project's preprocessor 
 $_IAR_CMSIS_DSP_$/CMSIS_5/Core/Include
 $_IAR_CMSIS_DSP_$/CMSIS-DSP/Include
 ```
->__Note__ IAR Embedded Workbench can refer to an environment variable (e.g., `%ENV_VAR%`) when expressed between `$_` and `_$` (e.g., `$_ENV_VAR_$`).
+> [!NOTE]
+> IAR Embedded Workbench can refer to an environment variable (e.g., `%ENV_VAR%`) when expressed between `$_` and `_$` (e.g., `$_ENV_VAR_$`).
 
 #### Linker → **Libraries**
 For linking a library against an application, it is important to match the same target configuration (CPU, FPU, Endianess, ...) in both projects. 
@@ -100,7 +106,8 @@ $_IAR_CMSIS_DSP_$/Lib/iar_<library-selection>_math.a
 | Cortex-M55  | ARMv8.1-M Mainline | little  | `ARMv81MMLld` |                | `ARMv81MMLldfdp` | `ARMv81MLldfdph` |
 | Cortex-M85  | ARMv8.1-M Mainline | little  | `ARMv81MMLld` |                | `ARMv81MMLldfdp` | `ARMv81MLldfdph` |
 
->__Note__ The [Library/arm_cortexM_math.eww](Library) workspace can be inspected for further details on each target's configurations.
+> [!NOTE]
+> The [Library/arm_cortexM_math.eww](Library) workspace can be inspected for further details on each target's configurations.
 
 ## Updating the CMSIS submodules
 For getting the newest versions of the CMSIS submodules in your repository, use:
