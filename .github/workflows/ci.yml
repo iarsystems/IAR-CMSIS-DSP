@@ -1,8 +1,6 @@
 name: IAR-CMSIS-DSP CI
 
 on:
-  schedule:
-  - cron: '0 0 * * *'
   workflow_dispatch:
   push:
     paths-ignore:
@@ -52,6 +50,7 @@ jobs:
       run: |
         iarbuild Library/arm_cortexM_math.ewp -build ${{ matrix.arch }} -log all -parallel `nproc`
     - name: Upload artifacts
+      if: matrix.arch == 'cortexM4lf'
       uses: actions/upload-artifact@v4
       with:
         name: iar_${{ matrix.arch }}_math.a
@@ -110,30 +109,7 @@ jobs:
     strategy:
       matrix:
         arch:
-        - cortexM0l
-        - cortexM0b
-        - cortexM3l
-        - cortexM3b
-        - cortexM4l
-        - cortexM4b
         - cortexM4lf
-        - cortexM4bf
-        - cortexM7l
-        - cortexM7ls
-        - cortexM7lf
-        - cortexM7b
-        - cortexM7bs
-        - cortexM7bf
-        - ARMv8MBLl
-        - ARMv8MMLl
-        - ARMv8MMLld
-        - ARMv8MMLlfsp
-        - ARMv8MMLlfdp
-        - ARMv8MMLldfsp
-        - ARMv8MMLldfdp
-        - ARMv81MMLld
-        - ARMv81MMLldfdp
-        - ARMv81MMLldfdph
     steps:
     - uses: geekyeggo/delete-artifact@f275313e70c08f6120db482d7a6b98377786765b # v5.1.0
       with:
