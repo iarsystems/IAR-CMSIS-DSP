@@ -37,7 +37,7 @@ jobs:
         - ARMv81MMLldfdp
         - ARMv81MMLldfdph
     container:
-      image: ghcr.io/${{ github.repository_owner }}/bxarm
+      image: ghcr.io/iarsystems/bxarm
     steps:
     - uses: actions/checkout@v4
       with:
@@ -78,7 +78,7 @@ jobs:
         - arm_svm_example
         - arm_variance_example
     container:
-      image: ghcr.io/${{ github.repository_owner }}/bxarm
+      image: ghcr.io/iarsystems/bxarm
     steps:
     - uses: actions/checkout@v4
       with:
