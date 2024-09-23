@@ -82,8 +82,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        repository: 'iarsystems/iar-cmsis-dsp'
-        ref: 'master'
         submodules: 'true'
     - name: Set environment
       run: |
@@ -97,7 +95,7 @@ jobs:
       run: |
         iarbuild Examples/${{ matrix.example }}.ewp -build "*" -log all -parallel `nproc`
     - name: Run example
-      uses: iarsystems/cspybat@v1
+      uses: IARSystems/cspybat@v1
       with:
         elf: ${GITHUB_WORKSPACE}/Examples/${{ matrix.arch }}/Exe/${{ matrix.example }}.out
         simulator: true
