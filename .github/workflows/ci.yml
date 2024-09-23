@@ -52,7 +52,7 @@ jobs:
       run: |
         iarbuild Library/arm_cortexM_math.ewp -build ${{ matrix.arch }} -log all -parallel `nproc`
     - name: Upload artifacts
-      if: matrix.arch == cortexM4lf
+      if: matrix.arch == 'cortexM4lf'
       uses: actions/upload-artifact@v4
       with:
         name: iar_${{ matrix.arch }}_math.a
