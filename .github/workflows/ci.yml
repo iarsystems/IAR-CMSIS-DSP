@@ -1,4 +1,4 @@
-name: CMSIS-DSP CI
+name: IAR-CMSIS-DSP CI
 
 on:
   schedule:
