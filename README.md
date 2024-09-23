@@ -7,7 +7,14 @@ CMSIS, or Cortex Microcontroller Software Interface Standard, consists of a vend
 
 Designed on top of CMSIS, CMSIS-DSP is a comprehensive suite of compute kernels for applications requiring compute performance on mathematics (basic, fast, real, complex, quaternion, linear algebra), filtering (DSP), transforms (FFT, MFCC, DCT), statistics, classical ML, and related functionalities, built as a library for Arm Cortex-M devices.
 
-In general, the CMSIS-DSP Library is supposed to be delivered as a CMSISPack provided by silicon vendors. However, the library can also be used by non-CMSISPack projects. This repository offers a process for building the CMSIS-DSP Library from its latest sources, in IAR Embedded Workbench for Arm version 9.40.1 or later, for non-CMSISPack enabled projects.
+In general, the CMSIS-DSP Library is supposed to be delivered as a CMSISPack provided by silicon vendors. However, the library can also be used by non-CMSISPack projects. This repository offers a process for building the CMSIS-DSP Library from its latest sources, in IAR Embedded Workbench for Arm, for non-CMSISPack enabled projects.
+
+### Current software versions
+| Software component | Version
+| - | - 
+| IAR Embedded Workbench for Arm | [v9.60.2](https://iar.com/ewarm) (or [earlier releases](https://github.com/iarsystems/IAR-CMSIS-DSP/releases))
+| CMSIS                          | [V6.1.0](https://github.com/ARM-software/CMSIS_6/releases/tag/v6.1.0)
+| CMSIS-DSP                      | [V1.16.2](https://github.com/ARM-software/CMSIS-DSP/releases/tag/v1.16.2)
 
 > [!TIP]
 > For non-CMSISPack projects, IAR Embedded Workbench for Arm already ships with pre-built CMSIS-DSP Libraries based on version 1.8.0. For simplicity, if you do not need the library's bleeding edge features, consider [using a pre-built library](https://github.com/IARSystems/IAR-CMSIS-DSP/wiki/Using-the-CMSIS%E2%80%90DSP-Library-in-IAR-Embedded-Workbench-for-Arm) instead.
@@ -16,7 +23,7 @@ In general, the CMSIS-DSP Library is supposed to be delivered as a CMSISPack pro
 The library is released in source form. It is strongly advised to build the library with optimizations for high speed to get the best performances.
 
 ### Cloning
-This repository comes with 2 submodules: [CMSIS-DSP](https://github.com/arm-software/CMSIS-DSP/) and also [CMSIS_5](https://github.com/arm-software/CMSIS_5/). The reason is that the library needs the `CMSIS_5/CMSIS/Core/Include/` headers to build. 
+This repository comes with 2 submodules: [CMSIS-DSP](https://github.com/arm-software/CMSIS-DSP/) and also [CMSIS_6](https://github.com/arm-software/CMSIS_6/). The reason is that the library needs the `CMSIS_6/CMSIS/Core/Include/` headers to build. 
 
 Clone this repository alongside its submodules. For example, using the Command Prompt with [Git for Windows](https://github.com/git-for-windows/git/releases/latest):
 ```
@@ -77,7 +84,7 @@ In your application project, verify which target is selected.
 #### C/C++ Compiler → **Preprocessor**
 Add these folders containing the library headers to your project's preprocessor options:
 ```
-$_IAR_CMSIS_DSP_$/CMSIS_5/Core/Include
+$_IAR_CMSIS_DSP_$/CMSIS_6/Core/Include
 $_IAR_CMSIS_DSP_$/CMSIS-DSP/Include
 ```
 > [!NOTE]
@@ -120,7 +127,7 @@ git submodule foreach git pull
 ```
 
 ## Support/Contact
-- For IAR support, use https://iar.com/support.
+- For IAR technical support contact [IAR Customer Support](https://iar.my.site.com/mypages/s/contactsupport).
 - For problems related to the contents of this repository, please create a new issue in https://github.com/IARSystems/IAR-CMSIS-DSP/issues.
 - For problems with the CMSIS-DSP Library itself, reach out to the CMSIS-DSP team. Please create a new issue in https://github.com/ARM-software/CMSIS-DSP/issues.
 

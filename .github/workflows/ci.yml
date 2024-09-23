@@ -31,8 +31,11 @@ jobs:
         - cortexM7bf
         - ARMv8MBLl
         - ARMv8MMLl
+        - ARMv8MMLld
         - ARMv8MMLlfsp
         - ARMv8MMLlfdp
+        - ARMv8MMLldfsp
+        - ARMv8MMLldfdp
         - ARMv81MMLld
         - ARMv81MMLldfdp
         - ARMv81MMLldfdph
@@ -123,11 +126,14 @@ jobs:
         - cortexM7bf
         - ARMv8MBLl
         - ARMv8MMLl
+        - ARMv8MMLld
         - ARMv8MMLlfsp
         - ARMv8MMLlfdp
+        - ARMv8MMLldfsp
+        - ARMv8MMLldfdp
         - ARMv81MMLld
         - ARMv81MMLldfdp
-        - ARMv81MMLldfdph    
+        - ARMv81MMLldfdph
     steps:
     - uses: geekyeggo/delete-artifact@f275313e70c08f6120db482d7a6b98377786765b # v5.1.0
       with:
