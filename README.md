@@ -1,4 +1,8 @@
 # GitHub's CMSIS-DSP Libraries in<br>IAR Embedded Workbench for Arm
+
+[![CMSIS-DSP CI](https://github.com/IARSystems/IAR-CMSIS-DSP/actions/workflows/ci.yml/badge.svg)](https://github.com/IARSystems/IAR-CMSIS-DSP/actions/workflows/ci.yml)
+[![badge](https://img.shields.io/badge/license-Apache2.0-blue)](https://github.com/iarsystems/iar-cmsis-dsp/blob/master/LICENSE)
+
 CMSIS, or Cortex Microcontroller Software Interface Standard, consists of a vendor-independent hardware abstraction layer for Arm Cortex processors which provides consistent device support. It provides simple software interfaces to the processor and the peripherals, simplifying software re-use, reducing the learning curve for developers, and reducing the time to market for new devices.
 
 Designed on top of CMSIS, CMSIS-DSP is a comprehensive suite of compute kernels for applications requiring compute performance on mathematics (basic, fast, real, complex, quaternion, linear algebra), filtering (DSP), transforms (FFT, MFCC, DCT), statistics, classical ML, and related functionalities, built as a library for Arm Cortex-M devices.
