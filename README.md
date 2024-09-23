@@ -12,7 +12,7 @@ In general, the CMSIS-DSP Library is supposed to be delivered as a CMSISPack pro
 ### Current software versions
 | Software component | Version
 | - | - 
-| IAR Embedded Workbench for Arm | [v9.60.2](https"//iar.com/ewarm) (or [earlier releases](https://github.com/iarsystems/IAR-CMSIS-DSP/releases))
+| IAR Embedded Workbench for Arm | [v9.60.2](https://iar.com/ewarm) (or [earlier releases](https://github.com/iarsystems/IAR-CMSIS-DSP/releases))
 | CMSIS                          | [V6.1.0](https://github.com/ARM-software/CMSIS_6/releases/tag/v6.1.0)
 | CMSIS-DSP                      | [V1.16.2](https://github.com/ARM-software/CMSIS-DSP/releases/tag/v1.16.2)
 
