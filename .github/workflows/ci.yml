@@ -1,0 +1,134 @@
+name: IAR-CMSIS-DSP CI
+
+on:
+  schedule:
+  - cron: '0 0 * * *'
+  workflow_dispatch:
+  push:
+    paths-ignore:
+      - 'README.md'    
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      matrix:
+        arch:
+        - cortexM0l
+        - cortexM0b
+        - cortexM3l
+        - cortexM3b
+        - cortexM4l
+        - cortexM4b
+        - cortexM4lf
+        - cortexM4bf
+        - cortexM7l
+        - cortexM7ls
+        - cortexM7lf
+        - cortexM7b
+        - cortexM7bs
+        - cortexM7bf
+        - ARMv8MBLl
+        - ARMv8MMLl
+        - ARMv8MMLlfsp
+        - ARMv8MMLlfdp
+        - ARMv81MMLld
+        - ARMv81MMLldfdp
+        - ARMv81MMLldfdph
+    container:
+      image: ghcr.io/iarsystems/bxarm
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: 'true'
+    - name: Set environment
+      run: |
+        echo "IAR_CMSIS_DSP=${{ github.workspace }}" >> $GITHUB_ENV
+    - name: Build libraries
+      run: |
+        iarbuild Library/arm_cortexM_math.ewp -build ${{ matrix.arch }} -log all -parallel `nproc`
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: iar_${{ matrix.arch }}_math.a
+        compression-level: 9
+        path: |
+          **/*.a
+
+  run:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      matrix:
+        arch:
+        - cortexM4lf
+        example:
+        - arm_bayes_example          
+        - arm_convolution_example
+        - arm_dotproduct_example
+        - arm_fft_bin_example
+        - arm_fir_example
+        - arm_graphic_equalizer_example
+        - arm_linear_interp_example
+        - arm_matrix_example
+        - arm_signal_converge_example
+        - arm_sin_cos_example
+        - arm_svm_example
+        - arm_variance_example
+    container:
+      image: ghcr.io/iarsystems/bxarm
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: 'true'
+    - name: Set environment
+      run: |
+        echo "IAR_CMSIS_DSP=${{ github.workspace }}" >> $GITHUB_ENV
+    - name: Download library
+      uses: actions/download-artifact@v4
+      with:
+        name: iar_${{ matrix.arch }}_math.a
+        path: ${{ github.workspace }}
+    - name: Build example
+      run: |
+        iarbuild Examples/${{ matrix.example }}.ewp -build "*" -log all -parallel `nproc`
+    - name: Run example
+      uses: iarsystems/cspybat@v1
+      with:
+        elf: ${GITHUB_WORKSPACE}/Examples/${{ matrix.arch }}/Exe/${{ matrix.example }}.out
+        simulator: true
+
+  cleanup:
+    needs: run
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      matrix:
+        arch:
+        - cortexM0l
+        - cortexM0b
+        - cortexM3l
+        - cortexM3b
+        - cortexM4l
+        - cortexM4b
+        - cortexM4lf
+        - cortexM4bf
+        - cortexM7l
+        - cortexM7ls
+        - cortexM7lf
+        - cortexM7b
+        - cortexM7bs
+        - cortexM7bf
+        - ARMv8MBLl
+        - ARMv8MMLl
+        - ARMv8MMLlfsp
+        - ARMv8MMLlfdp
+        - ARMv81MMLld
+        - ARMv81MMLldfdp
+        - ARMv81MMLldfdph    
+    steps:
+    - uses: geekyeggo/delete-artifact@f275313e70c08f6120db482d7a6b98377786765b # v5.1.0
+      with:
+        name: iar_${{ matrix.arch }}_math.a
