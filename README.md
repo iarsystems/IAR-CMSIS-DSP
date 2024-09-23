@@ -84,7 +84,7 @@ In your application project, verify which target is selected.
 #### C/C++ Compiler → **Preprocessor**
 Add these folders containing the library headers to your project's preprocessor options:
 ```
-$_IAR_CMSIS_DSP_$/CMSIS_6/Core/Include
+$_IAR_CMSIS_DSP_$/CMSIS_6/CMSIS/Core/Include
 $_IAR_CMSIS_DSP_$/CMSIS-DSP/Include
 ```
 > [!NOTE]
