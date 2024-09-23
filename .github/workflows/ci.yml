@@ -99,7 +99,6 @@ jobs:
       uses: geekyeggo/delete-artifact@f275313e70c08f6120db482d7a6b98377786765b # v5.1.0
       with:
         name: iar_${{ matrix.arch }}_math.a
-
     - name: Build example
       run: |
         iarbuild Examples/${{ matrix.example }}.ewp -build "*" -log all -parallel `nproc`
