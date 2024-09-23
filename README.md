@@ -127,7 +127,7 @@ git submodule foreach git pull
 ```
 
 ## Support/Contact
-- For IAR support, use https://iar.com/support.
+- For IAR technical support contact [IAR Customer Support](https://iar.my.site.com/mypages/s/contactsupport).
 - For problems related to the contents of this repository, please create a new issue in https://github.com/IARSystems/IAR-CMSIS-DSP/issues.
 - For problems with the CMSIS-DSP Library itself, reach out to the CMSIS-DSP team. Please create a new issue in https://github.com/ARM-software/CMSIS-DSP/issues.
 
