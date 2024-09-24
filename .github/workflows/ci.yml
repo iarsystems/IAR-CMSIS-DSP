@@ -97,7 +97,7 @@ jobs:
       run: |
         iarbuild Examples/${{ matrix.example }}.ewp -build "*" -log all -parallel `nproc`
     - name: Run example
-      uses: iarsystems/cspybat@v1
+      uses: felipe-iar/cspybat@v1
       with:
         elf: ${GITHUB_WORKSPACE}/Examples/${{ matrix.arch }}/Exe/${{ matrix.example }}.out
         simulator: true
