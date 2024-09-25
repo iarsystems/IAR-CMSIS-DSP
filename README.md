@@ -17,7 +17,7 @@ In general, the CMSIS-DSP Library is supposed to be delivered as a CMSISPack pro
 | CMSIS-DSP                      | [V1.16.2](https://github.com/ARM-software/CMSIS-DSP/releases/tag/v1.16.2)
 
 > [!WARNING]
-> The IAR Embedded Workbench for Arm ships with pre-built CMSIS-DSP Libraries based on version 1.8.0, released alongside CMSIS 5.7.0. For new projects, is is recommended to use the latest stable version.
+> The IAR Embedded Workbench for Arm ships with pre-built CMSIS-DSP Libraries based on version 1.8.0, released alongside CMSIS 5.7.0. For new projects, it is recommended to use the latest stable version.
 
 ## How to build
 The library is released in source form. It is strongly advised to build the library with optimizations for high speed to get the best performances.
