@@ -108,7 +108,7 @@ jobs:
           -parallel `nproc`
     - name: Build example ${{ matrix.example }}
       run: |
-        iarbuild Examples/${{ matrix.example }} \
+        iarbuild Examples/${{ matrix.example }}.ewp \
           -build ${{ matrix.arch }} \
           -log info \
           -parallel `nproc`
