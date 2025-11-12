@@ -51,7 +51,7 @@ jobs:
         - ARMv81MMLldfdp
         - ARMv81MMLldfdph
     container:
-      image: ghcr.io/iarsystems/arm:${{ matrix.tag }}-minimal
+      image: ghcr.io/iarsystems/arm:${{ matrix.tag }}-base
     steps:
     - uses: actions/checkout@v5
       with:
