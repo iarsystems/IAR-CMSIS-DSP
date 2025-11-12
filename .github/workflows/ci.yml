@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   push:
     paths-ignore:
-      - 'README.md'    
+    - 'README.md'    
 
 # Set a new GitHub Actions Secret named IAR_LMS_BEARER_TOKEN
 # for your repository. The secret is then propagated to an
@@ -19,7 +19,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     strategy:
+      fail-fast: false
       matrix:
+        tag:
+        - 9.70.2
+        - 9.70.1
+        - 9.60.4
         arch:
         - cortexM0l
         - cortexM0b
@@ -45,35 +50,6 @@ jobs:
         - ARMv81MMLld
         - ARMv81MMLldfdp
         - ARMv81MMLldfdph
-    container:
-      image: ghcr.io/iarsystems/arm
-    steps:
-    - uses: actions/checkout@v4
-      with:
-        submodules: 'true'
-    - name: Set environment
-      run: |
-        echo "IAR_CMSIS_DSP=${{ github.workspace }}" >> $GITHUB_ENV
-    - name: Build libraries
-      run: |
-        iarbuild Library/arm_cortexM_math.ewp -build ${{ matrix.arch }} -log all -parallel `nproc`
-    - name: Upload artifacts
-      if: matrix.arch == 'cortexM4lf'
-      uses: actions/upload-artifact@v4
-      with:
-        name: iar_${{ matrix.arch }}_math.a
-        compression-level: 9
-        path: |
-          **/*.a
-
-  run:
-    needs: build
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    strategy:
-      matrix:
-        arch:
-        - cortexM4lf
         example:
         - arm_bayes_example          
         - arm_convolution_example
@@ -88,29 +64,28 @@ jobs:
         - arm_svm_example
         - arm_variance_example
     container:
-      image: ghcr.io/iarsystems/arm
+      image: ghcr.io/iarsystems/arm:${{ matrix.tag }}-minimal
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
       with:
         submodules: 'true'
     - name: Set environment
       run: |
         echo "IAR_CMSIS_DSP=${{ github.workspace }}" >> $GITHUB_ENV
-    - name: Download library
-      uses: actions/download-artifact@v4
-      with:
-        name: iar_${{ matrix.arch }}_math.a
-        path: ${{ github.workspace }}
-    - name: Build example
+    - name: Build libraries
       run: |
-        iarbuild Examples/${{ matrix.example }}.ewp -build "*" -log all -parallel `nproc`
-    - name: Run example
+        iarbuild Library/arm_cortexM_math.ewp \
+          -build ${{ matrix.arch }} \
+          -log info \
+          -parallel `nproc`
+    - name: Run example ${{ matrix.example }}
+      if: matrix.arch == 'cortexM4lf'
       run: |
         CSpyBat \
-          /opt/iar/cxarm/arm/bin/libarmPROC.so \
-          /opt/iar/cxarm/arm/bin/libarmSIM2.so \
-          --plugin=/opt/iar/cxarm/arm/bin/libarmLibsupportUniversal.so \
-          --debug_file=${GITHUB_WORKSPACE}/Examples/${{ matrix.arch }}/Exe/${{ matrix.example }}.out \
+          $(find /opt/iar/cxarm -iname "libarmproc.so") \
+          $(find /opt/iar/cxarm -iname "libarmsim2.so") \
+          --plugin=$(find /opt/iar/cxarm -iname "libarmlibsupportuniversal.so") \
+          --debug_file=$(find Examples/${{ matrix.arch }} -iname "${{ matrix.example }}.out") \
           --timeout=2000000 \
           --backend \
             --cpu=cortex-m4 \
