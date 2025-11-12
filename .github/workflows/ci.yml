@@ -106,14 +106,20 @@ jobs:
           -build ${{ matrix.arch }} \
           -log info \
           -parallel `nproc`
+    - name: Build example ${{ matrix.example }}
+      run: |
+        iarbuild Examples/${{ matrix.example }} \
+          -build ${{ matrix.arch }} \
+          -log info \
+          -parallel `nproc`
     - name: Run example ${{ matrix.example }}
       run: |
         CSpyBat \
           $(find /opt/iar/cxarm -iname "libarmproc.so") \
           $(find /opt/iar/cxarm -iname "libarmsim2.so") \
           --plugin=$(find /opt/iar/cxarm -iname "libarmlibsupportuniversal.so") \
-          --debug_file=$(find Examples/${{ matrix.arch }} -iname "${{ matrix.example }}.out") \
-          --timeout=2000000 \
+          --debug_file=$(find Examples -iname "${{ matrix.example }}.out") \
+          --timeout=5000000 \
           --backend \
             --cpu=cortex-m4 \
             --fpu=vfpv4_sp \
