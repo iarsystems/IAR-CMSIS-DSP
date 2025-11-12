@@ -63,6 +63,329 @@ jobs:
         - arm_sin_cos_example
         - arm_svm_example
         - arm_variance_example
+        exclude:
+        - arch: cortexM0l
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
+        - arch: cortexM0b
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
+        - arch: cortexM3l
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
+        - arch: cortexM3b
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
+        - arch: cortexM4l
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
+        - arch: cortexM4b
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
+        - arch: cortexM4bf
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
+        - arch: cortexM7l
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
+        - arch: cortexM7ls
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
+        - arch: cortexM7lf
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
+        - arch: cortexM7b
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
+        - arch: cortexM7bs
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
+        - arch: cortexM7bf
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
+        - arch: ARMv8MBLl
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
+        - arch: ARMv8MMLl
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
+        - arch: ARMv8MMLld
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
+        - arch: ARMv8MMLlfsp
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
+        - arch: ARMv8MMLlfdp
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
+        - arch: ARMv8MMLldfsp
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
+        - arch: ARMv8MMLldfdp
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
+        - arch: ARMv81MMLld
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
+        - arch: ARMv81MMLldfdp
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
+        - arch: ARMv81MMLldfdph
+          example: [ 
+            arm_bayes_example,
+            arm_convolution_example,
+            arm_dotproduct_example,
+            arm_fft_bin_example,
+            arm_fir_example,
+            arm_graphic_equalizer_example,
+            arm_linear_interp_example,
+            arm_matrix_example,
+            arm_signal_converge_example,
+            arm_sin_cos_example,
+            arm_svm_example,
+            arm_variance_example ]
     container:
       image: ghcr.io/iarsystems/arm:${{ matrix.tag }}-minimal
     steps:
