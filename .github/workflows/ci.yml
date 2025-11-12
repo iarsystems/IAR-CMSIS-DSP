@@ -115,9 +115,9 @@ jobs:
     - name: Run example ${{ matrix.example }}
       run: |
         CSpyBat \
-          $(find /opt/iar/cxarm -iname "libarmproc.so") \
-          $(find /opt/iar/cxarm -iname "libarmsim2.so") \
-          --plugin=$(find /opt/iar/cxarm -iname "libarmlibsupportuniversal.so") \
+          $(find /opt/iar/cxarm/ -iname "libarmproc.so") \
+          $(find /opt/iar/cxarm/ -iname "libarmsim2.so") \
+          --plugin=$(find /opt/iar/cxarm/ -iname "libarmlibsupportuniversal.so") \
           --debug_file=$(find Examples -iname "${{ matrix.example }}.out") \
           --timeout=5000000 \
           --backend \
