@@ -18,8 +18,8 @@ The CMSIS-DSP Library is released in source form. It is strongly advised to buil
 ### Software components
 Currently this repository uses the following software:
 - IAR Embedded Workbench for Arm [v10.10.2](https://iar.com/ewarm) ([previous releases](https://github.com/iarsystems/IAR-CMSIS-DSP/releases))
-- CMSIS-DSP [v1.17.1](https://github.com/ARM-software/CMSIS-DSP/releases/tag/v1.17.1)
-- CMSIS [v6.3.0](https://github.com/ARM-software/CMSIS_6/releases/tag/v6.3.0)
+- CMSIS-DSP [v1.18.0](https://github.com/ARM-software/CMSIS-DSP/releases/tag/v1.18.0)
+- CMSIS [v6.4.0](https://github.com/ARM-software/CMSIS_6/releases/tag/v6.4.0)
 
 ### Cloning
 Set a persistent environment variable for your operating system named `CMSIS_DSP_PATH` containing the path to which you intend to clone this repository. This environment variable serve as a persistent reference for any application projects making use of one these libraries.
